@@ -48,14 +48,14 @@ struct nvram_pair router_defaults[] = {
 	{ "lan_hwaddr", "" },			/* LAN interface MAC address */
 
 	/* LAN TCP/IP parameters */
-	{ "lan_proto_x", "1" },			/* DHCP client [static|dhcp] in AP mode */
+	{ "lan_proto_x", "0" },			/* DHCP client [static|dhcp] in AP mode */
 	{ "lan_dhcpd_x", "0" },			/* DHCP server in AP mode */
 	{ "lan_ipaddr", DEF_LAN_ADDR },		/* LAN IP address */
 	{ "lan_netmask", DEF_LAN_MASK },	/* LAN netmask */
-	{ "lan_gateway", DEF_LAN_ADDR },	/* LAN gateway */
-	{ "lan_dns_x", "1" },			/* LAN DNS [static|dhcp] */
-	{ "lan_dns1", "" },			/* LAN DNS1 */
-	{ "lan_dns2", "" },			/* LAN DNS2 */
+	{ "lan_gateway", DEF_LAN_GATEWAY },	/* LAN gateway */
+	{ "lan_dns_x", "0" },			/* LAN DNS [static|dhcp] */
+	{ "lan_dns1", DEF_LAN_DNS },		/* LAN DNS1 */
+	{ "lan_dns2", DEF_LAN_DNS },		/* LAN DNS2 */
 	{ "lan_domain", "lan" },		/* LAN domain name */
 	{ "lan_stp", "1" },			/* LAN spanning tree protocol */
 
@@ -155,7 +155,7 @@ struct nvram_pair router_defaults[] = {
 	{ "https_clist", DEF_HTTPS_CIPH_LIST },	/* HTTPS SSL cipher list */
 	{ "fw_dos_x", "0" },			// oleg patch
 	{ "dr_enable_x", "1" },			// oleg patch
-	{ "mr_enable_x", "1" },			// oleg patch
+	{ "mr_enable_x", "0" },			// oleg patch
 	{ "mr_qleave_x", "1" },
 
 #if BOARD_HAS_5G_RADIO
@@ -442,7 +442,7 @@ struct nvram_pair router_defaults[] = {
 	{ "ip6_dns3", "" },
 
 	{ "ip6_lan_auto", "0" },
-	{ "ip6_lan_addr", "fc00:101:101::1" },
+	{ "ip6_lan_addr", "" },
 	{ "ip6_lan_size", "64" },
 	{ "ip6_lan_radv", "1" },
 	{ "ip6_lan_dhcp", "1" },
@@ -450,7 +450,7 @@ struct nvram_pair router_defaults[] = {
 	{ "ip6_lan_sfps", "4096" }, // 0x1000
 	{ "ip6_lan_sfpe", "4352" }, // 0x1100
 
-	{ "upnp_enable_x", "1" },
+	{ "upnp_enable_x", "0" },
 	{ "upnp_proto", "0" },
 	{ "upnp_secure", "1" },
 	{ "upnp_clean_min", "10" },
